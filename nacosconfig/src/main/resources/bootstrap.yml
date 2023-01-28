@@ -14,3 +14,9 @@ spring:
         file-extension: yaml #指定yaml格式的配置
         group: TEST_GROUP # 指定分组
         namespace: 2c6e62c3-c2e2-4a4a-8029-114099aaf949 #指定命名空间
+    sentinel:
+      transport:
+        # 配置Sentinel dashboard地址
+        dashboard: localhost:8080
+        # 默认8719端口，键入被占用会自动从8719+1，直到找到未被占用的端口
+        port: 8719
