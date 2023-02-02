@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class DataController {
@@ -25,5 +26,16 @@ public class DataController {
     public JsonResult<String> msbSql(@PathVariable("id") Long id){
         JsonResult<String> result = new JsonResult(200, hashMap.get(id), serverPort);
         return result;
+    }
+
+    @GetMapping("/timeOut")
+    public String timeOut() {
+        try {
+            System.out.println("延迟响应");
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
     }
 }
