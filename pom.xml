@@ -21,6 +21,9 @@
     <modules>
         <module>nacosconfig</module>
         <module>cloudalibaba-commons</module>
+        <module>cloudalibaba-consumer8084</module>
+        <module>cloudalibaba-provider-9003</module>
+        <module>cloudalibaba-provider-9004</module>
     </modules>
     <dependencies>
         <dependency>
