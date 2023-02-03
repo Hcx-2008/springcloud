@@ -20,6 +20,12 @@ ribbon:
   #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
   ConnectTimeout: 5000
 
+logging:
+  level:
+    # openfeign日志以什么级别监控哪个接口
+    com.example.service.OpenFeignService: debug
+
+
 #消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者)
 service-url:
   nacos-user-service: http://nacos-provider
