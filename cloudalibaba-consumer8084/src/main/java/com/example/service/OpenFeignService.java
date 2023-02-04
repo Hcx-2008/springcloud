@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.cloudalibabacommons.utils.JsonResult;
+import com.example.service.impl.OpenFeignServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @Service
 //表示远程调用服务名称
-@FeignClient("nacos-provider")
+@FeignClient(value = "nacos-provider", fallback = OpenFeignServiceImpl.class)
 public interface OpenFeignService {
     /**
      * 此方法表示远程调用info/{id}接口
