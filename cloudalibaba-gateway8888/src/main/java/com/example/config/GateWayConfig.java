@@ -13,7 +13,7 @@ public class GateWayConfig {
     就会转发到http://localhost:9001/nacos-provider/msb/任何地址
      */
 
-    @Bean
+    /*@Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder){
         // 构建多个路由routes
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
@@ -21,5 +21,5 @@ public class GateWayConfig {
         routes.route("path_msb",r -> r.path("/demo/**").uri("http://localhost:9003/nacos-provider")).build();
         // 返回所有路由规则
         return routes.build();
-    }
+    }*/
 }
