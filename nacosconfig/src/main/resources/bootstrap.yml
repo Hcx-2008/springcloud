@@ -14,6 +14,14 @@ spring:
         file-extension: yaml #指定yaml格式的配置
         group: TEST_GROUP # 指定分组
         namespace: 2c6e62c3-c2e2-4a4a-8029-114099aaf949 #指定命名空间
+        shared-configs[0]: #shared-configs是一个列表，可以添加多项
+          data_id: redis.yml #具体配置
+          group: DEFAULT_GROUP #默认可以不写
+          refresh: true #是否开启自动刷新，默认为false，必须搭配@RefreshScope注解
+        shared-configs[1]: #shared-configs是一个列表，可以添加多项
+          data_id: common.yml #具体配置
+          group: DEFAULT_GROUP #默认可以不写
+          refresh: true #是否开启自动刷新，默认为false，必须搭配@RefreshScope注解
     sentinel:
       transport:
         # 配置Sentinel dashboard地址

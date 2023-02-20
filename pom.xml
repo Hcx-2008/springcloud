@@ -20,6 +20,7 @@
         <openfeign-version>2.2.5.RELEASE</openfeign-version>
         <spring-cloud-gateway-varsion>Hoxton.SR8</spring-cloud-gateway-varsion>
         <spring-boot-starter-parent-version>2.3.11.RELEASE</spring-boot-starter-parent-version>
+        <mybatis-version>3.5.1</mybatis-version>
     </properties>
     <modules>
         <module>nacosconfig</module>
@@ -79,6 +80,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot-starter-parent-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-version}</version>
+            </dependency>
+            <!-- 数据库使用MySQL数据库 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.25</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

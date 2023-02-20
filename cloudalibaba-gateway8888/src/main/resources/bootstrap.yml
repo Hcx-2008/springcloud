@@ -7,6 +7,12 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+    sentinel:
+      transport:
+        # 配置Sentinel dashboard地址
+        dashboard: localhost:8080
+        # 默认8719端口，键入被占用会自动从8719+1，直到找到未被占用的端口
+        port: 8719
     gateway:
       discovery:
         locator:
@@ -20,9 +26,9 @@ spring:
             #- Cookie=username,[a-z]+ # 匹配Cookie的key和value（正则表达式）
             #- Header=X-Request-Id,\d+ #表示数字
             #- Host=**.test.com #匹配当前的主机地址发出的请求
-            - Method=GET,POST # 匹配GET请求或者POST请求,其他类型的请求i报404
-            - Query=id,.+ # 匹配请求参数，这里如果需要匹配多个参数，可以写多个Query
-            - Query=name,[a-z]+ # 匹配请求参数，这里如果需要匹配多个参数，可以写多个Query
+            #- Method=GET,POST # 匹配GET请求或者POST请求,其他类型的请求i报404
+            #- Query=id,.+ # 匹配请求参数，这里如果需要匹配多个参数，可以写多个Query
+            #- Query=name,[a-z]+ # 匹配请求参数，这里如果需要匹配多个参数，可以写多个Query
         #routes:  # 路由
        # - id: nacos-provider #路由ID，没有固定要求，但是要保证唯一，建议配合服务名
         #  uri: http://localhost:9003/nacos-provider # 匹配提供服务的路由地址

@@ -18,10 +18,23 @@ public class ConfigClientController {
     @Value("${config.info}")
     private String configInfo;
 
+    @Value("${config.common}")
+    private String configCommon;
+
+    //共享
+    @Value("${redisip}")
+    private String redisIp;
+
     @GetMapping("/config/info")
     public String getConfigInfo(){
         System.out.println(configInfo);
         return configInfo;
+    }
+
+    @GetMapping("/config/common")
+    public String getConfigCommon(){
+        System.out.println(configCommon);
+        return configCommon;
     }
 
     @GetMapping("/testc")
