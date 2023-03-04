@@ -29,6 +29,7 @@
         <module>cloudalibaba-provider-9003</module>
         <module>cloudalibaba-provider-9004</module>
         <module>cloudalibaba-gateway8888</module>
+        <module>dubbo-provider-7500</module>
     </modules>
     <dependencies>
         <dependency>
